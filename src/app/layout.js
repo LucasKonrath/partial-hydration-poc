@@ -22,12 +22,12 @@ export async function generateMetadata() {
   const headersList = headers();
   
   return {
-    title: "Next.js App with Partial Hydration",
-    description: "An optimized Next.js application using partial hydration and progressive enhancement",
-    metadataBase: new URL('https://your-domain.com'),
+    title: "Retro Gaming Hub - Classic Video Games Collection",
+    description: "Discover and shop classic retro video games from the golden age of gaming. Nintendo, Sega, Atari and more!",
+    metadataBase: new URL('https://retro-gaming-hub.com'),
     openGraph: {
-      title: 'Next.js App with Partial Hydration',
-      description: 'An optimized Next.js application using partial hydration and progressive enhancement',
+      title: 'Retro Gaming Hub - Classic Video Games',
+      description: 'Discover and shop classic retro video games from the golden age of gaming',
       type: 'website',
     },
     other: {

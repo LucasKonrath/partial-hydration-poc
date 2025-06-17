@@ -6,7 +6,7 @@ const nextConfig = {
   compress: true,
   reactStrictMode: true,
   images: {
-    domains: ['nextjs.org'],
+    domains: ['nextjs.org', 'images.unsplash.com'],
     formats: ['image/avif', 'image/webp'],
   },
   experimental: {
