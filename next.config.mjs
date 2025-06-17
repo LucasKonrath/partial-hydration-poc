@@ -1,4 +1,25 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import bundleAnalyzer from '@next/bundle-analyzer';
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  poweredByHeader: false,
+  compress: true,
+  reactStrictMode: true,
+  images: {
+    domains: ['nextjs.org'],
+    formats: ['image/avif', 'image/webp'],
+  },
+  experimental: {
+    optimizeCss: true
+  },
+  webpack: (config) => {
+    config.optimization.minimize = true;
+    return config;
+  }
+};
+
+export default process.env.ANALYZE 
+  ? bundleAnalyzer({
+      enabled: true
+    })(nextConfig)
+  : nextConfig;

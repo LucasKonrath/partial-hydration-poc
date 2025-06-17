@@ -6,15 +6,21 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "build:prod": "next build && next-bundle-analyzer"
   },
   "dependencies": {
+    "next": "15.3.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.3"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "@next/bundle-analyzer": "^15.3.3",
+    "autoprefixer": "^10.4.15",
+    "critters": "^0.0.23",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3"
   }
 }

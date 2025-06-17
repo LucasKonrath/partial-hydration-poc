@@ -1,16 +1,18 @@
-import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import StaticContent from './staticContent';
 import BlogPosts from './BlogPosts';
-
-// Lazy-load Counter (only loaded when needed)
-const LazyCounter = dynamic(() => import('./counter'), { ssr: true }); // SSR enabled
+import ClientCounter from './ClientCounter';
 
 export default function Home() {
   return (
     <div>
       <StaticContent />
-      <LazyCounter />
-      <BlogPosts />
+      <Suspense fallback={<div>Loading counter...</div>}>
+        <ClientCounter />
+      </Suspense>
+      <Suspense fallback={<div>Loading blog posts...</div>}>
+        <BlogPosts />
+      </Suspense>
     </div>
   );
-};
+}
